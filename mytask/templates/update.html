@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+{% block content %}	
+
+  <h1>New Company Details</h1>
+    <form class="form-horizontal" action="{{url_for('update')}}" method="POST">
+  <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Company name:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="Company_name" name="Company_name" placeholder="Enter company name">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Drive type:</label>
+                        <div class="col-sm-10">
+                            <div class="radio_inline">
+                                <label class="radio-inline">
+                                    <input type="radio" name="Drive_type" value="Oncampus">Oncampus
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Drive_type" value="Offcampus">Offcampus
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Eligible_gender:</label>
+                        <div class="col-sm-6">
+                            <div class="radio_inline">
+                                <label class="checkbox-inline"><input type="checkbox" name="Eligible_gender" value="Male">Male</label>
+                                <label class="checkbox-inline"><input type="checkbox" name="Eligible_gender" value="Female">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Applicable Branches:</label>
+                        <div class="col-sm-6">
+                            <div class="radio_inline">
+                                <label class="checkbox-inline"><input type="checkbox" name="Branch" value="CSE">CSE</label>
+                                <label class="checkbox-inline"><input type="checkbox" name="Branch" value="ECE">ECE</label>
+                                <label class="checkbox-inline"><input type="checkbox" name="Branch" value="IT">IT</label>
+                                <label class="checkbox-inline"><input type="checkbox" name="Branch" value="EEE">EEE</label>
+                                <label class="checkbox-inline"><input type="checkbox" name="Branch" value="Civil">Civil</label>
+                                <label class="checkbox-inline"><input type="checkbox" name="Branch" value="Mech">Mech</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Eligibility criteria:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="Eligibility" name="Eligibility" placeholder="Enter Eligibility criteria">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">no. of Backlogs:</label>
+                        <div class="col-sm-6">
+                            <select class="form-control" id="Backlogs" name="Backlogs">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Registration link:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="Reg_link" name="Reg_link" placeholder="Enter Registration link">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">no. of rounds:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="Rounds" name="Rounds" placeholder="Enter no. of rounds">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Package:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="Package" name="Package" placeholder="Enter Package">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Location:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="Location" name="Location" placeholder="Enter Location">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <label for="comment">Comment:</label>
+                        <textarea class="form-control" rows="5" id="comment" name="comment" placeholder="Enter your regards"></textarea>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">submit</button>
+                        </div>
+                    </div>
+                </div>
+                
+</form>
+
+
+{% endblock %}

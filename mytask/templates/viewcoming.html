@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<h1> UpComing Campus Details</h1>
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Sno</th>
+                <th>Company_name</th>
+                <th>Drive_type</th>
+                <th>Eligible_gender</th>
+                <th>Branch</th>
+                <th>Eligibility</th>
+                <th>Backlogs</th>
+                <th>Reg_link</th>
+                <th>Rounds</th>
+                <th>Package</th>
+                <th>Location</th>
+                <th>comment</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for d in data %}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td>{{d[1]}}</td>
+                <td>{{d[2]}}</td>
+                <td>{{d[3]}}</td>
+                <td>{{d[4]}}</td>
+                <td>{{d[5]}}</td>
+                <td>{{d[6]}}</td>
+                <td>{{d[7]}}</td>
+                <td>{{d[8]}}</td>
+                <td>{{d[9]}}</td>
+                <td>{{d[10]}}</td>
+                <td>{{d[11]}}</td>
+                <td>
+                  <form action="{{url_for('edit')}}" method="POST">
+                  <button value={{d[0]}} name="edit">Edit</button>
+                  </form>
+                </td>
+
+                <td>
+                  <form action="{{url_for('delete')}}" method="POST">
+                  <button value="{{d[0]}}" name="delete">Delete</button>
+                  </form>
+                </td>
+                
+
+                
+                    
+
+
+
+
+                
+
+
+                <td>
+
+                  <form action="{{url_for('viewcoming')}}" method="POST">
+
+                   
+                        <input type="text" class="form-control" id="Placed_count" name="Placed_count" placeholder="Placed">
+                       
+
+
+
+
+                  <button value="{{d[0]}}" name="over">over</button>
+                  </form>
+                </td>
+
+
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+</table>
+
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+
+</script>
+
+{% endblock %}

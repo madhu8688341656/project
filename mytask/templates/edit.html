@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+{% block content %}	
+
+  <h1>Edit Details</h1>
+    <form class="form-horizontal" action="{{url_for('modify')}}" method="POST">
+  <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Company name:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="Company_name" name="Company_name" value="{{data[0][1]}}" placeholder="Enter company name">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Drive type:</label>
+                        <div class="col-sm-10">
+                            <div class="radio_inline">
+                                <label class="radio-inline">
+                                    <input type="radio" name="Drive_type" value="Oncampus" {% if data[0][2]=="Oncampus"%} checked {% endif %}>Oncampus
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="Drive_type" value="Offcampus" {% if data[0][2]=="Offcampus"%} checked {% endif %}>Offcampus
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Eligible_gender:</label>
+                        <div class="col-sm-6">
+                            <div class="radio_inline">
+                                <label class="checkbox-inline"><input type="checkbox" name="Eligible_gender" value="Male" {% if 'Male' in Eligible_gender %} checked {% endif %}>Male</label>
+                                <label class="checkbox-inline"><input type="checkbox" name="Eligible_gender" value="Female"{% if 'Female' in Eligible_gender %} checked {% endif %}>Female</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">Applicable Branches:</label>
+                        <div class="col-sm-6">
+                            <div class="radio_inline">
+                                <label class="checkbox-inline"><input type="checkbox" name="Branch" value="CSE" {% if 'CSE' in Branch %} checked {% endif %}>CSE</label>
+                                <label class="checkbox-inline"><input type="checkbox" name="Branch" value="ECE"{% if 'ECE' in Branch %} checked {% endif %}>ECE</label>
+                                <label class="checkbox-inline"><input type="checkbox" name="Branch" value="IT"{% if 'IT' in Branch %} checked {% endif %}>IT</label>
+                                <label class="checkbox-inline"><input type="checkbox" name="Branch" value="EEE"{% if 'EEE' in Branch %} checked {% endif %}>EEE</label>
+                                <label class="checkbox-inline"><input type="checkbox" name="Branch" value="Civil"{% if 'Civil' in Branch %} checked {% endif %}>Civil</label>
+                                <label class="checkbox-inline"><input type="checkbox" name="Branch" value="Mech"{% if 'Mech' in Branch %} checked {% endif %}>Mech</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Eligibility criteria:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="Eligibility" name="Eligibility" value="{{data[0][5]}}" placeholder="Enter Eligibility criteria">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="pwd">no. of Backlogs:</label>
+                        <div class="col-sm-6">
+                            <select class="form-control" id="Backlogs" name="Backlogs">
+                                <option value="0"  {% if data[0][6]=="0"%} selected {% endif %}>0</option>
+                                <option value="1"  {% if data[0][6]=="1"%} selected {% endif %}>1</option>
+                                <option value="2"  {% if data[0][6]=="2"%} selected {% endif %}>2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Registration link:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="Reg_link" name="Reg_link" value="{{data[0][7]}}"placeholder="Enter Registration link">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">no. of rounds:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="Rounds" name="Rounds" value="{{data[0][8]}}"placeholder="Enter no. of rounds">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Package:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="Package" name="Package" value="{{data[0][9]}}" placeholder="Enter Package">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="email">Location:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="Location" name="Location" value="{{data[0][10]}}" placeholder="Enter Location">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <label for="comment">Comment:</label>
+                        <textarea class="form-control" rows="5" id="comment" name="comment" value="{{data[0][11]}}" placeholder="Enter your regards"></textarea>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default"value={{data[0][0]}} name='id' >submit</button>
+                        </div>
+                    </div>
+                </div>
+                
+</form>
+
+
+{% endblock %}
